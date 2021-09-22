@@ -7,4 +7,6 @@ package com.simple.common.result;
  * @date 2021/9/21 11:30
  */
 public class Result {
+
+
 }
