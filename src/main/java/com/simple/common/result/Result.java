@@ -1,11 +1,14 @@
 package com.simple.common.result;
 
+import lombok.Data;
+
 /**
  * 全局消息统一返回
  *
  * @author Simple
  * @date 2021/9/21 11:30
  */
+@Data
 public class Result<T> {
 
     /**
