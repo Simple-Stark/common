@@ -1,14 +1,11 @@
 package com.simple.common.result;
 
-import lombok.Data;
-
 /**
  * 全局统一消息与返回消息对应类
  *
  * @author Simple
  * @date 2021/9/22 22:08
  */
-@Data
 public class CodeMsg {
     /**
      * 全局通用错误码
@@ -21,11 +18,11 @@ public class CodeMsg {
     /**
      * 响应状态码
      */
-    private Integer code;
+    private final Integer code;
     /**
      * 响应信息
      */
-    private String msg;
+    private final String msg;
 
     /**
      * 【构造器】私有构造器，防止直接创建
@@ -46,5 +43,13 @@ public class CodeMsg {
         int code = this.code;
         String message = String.format(this.msg, args);
         return new CodeMsg(code, message);
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
     }
 }
