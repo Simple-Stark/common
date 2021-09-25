@@ -57,12 +57,23 @@ public class Result<T> {
         return new Result<>(CodeMsg.BASE_ERROR, data);
     }
 
-    public static Result<Void> error(CodeMsg CodeMsg) {
-        return new Result<>(CodeMsg, null);
+    public static Result<Void> error(CodeMsg codeMsg) {
+        return new Result<>(codeMsg, null);
     }
 
     public static Result<Void> error(String msg) {
         return new Result<>(CodeMsg.BASE_ERROR.getCode(),msg, null);
     }
 
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public T getData() {
+        return data;
+    }
 }

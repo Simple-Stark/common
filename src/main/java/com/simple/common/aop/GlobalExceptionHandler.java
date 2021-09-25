@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public Result<Void> error(Exception e) {
-        log.error("未特定捕捉Exception =====>> {}",e.getMessage(),e);
+        log.error("未特定捕捉的异常，Exception =====>> {}",e.getMessage(),e);
         return Result.error(CodeMsg.BASE_ERROR.fillArgs(e.getMessage()));
     }
 
@@ -45,7 +45,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public Result<Void> error(BindException e) {
         // 打印日志
-        log.error("BindExceptionHandler =====>> {}",e.getMessage(),e);
+        log.error("参数校验异常，BindExceptionHandler =====>> {}",e.getMessage(),e);
         List<ObjectError> errors = e.getAllErrors();
         ObjectError error = errors.get(0);
         String msg = error.getDefaultMessage();
@@ -61,7 +61,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public Result<Void> error(SimpleException e) {
         // 打印日志
-        log.error("SimpleExceptionHandler =====>> {}",e.getMessage(),e);
+        log.error("自定义异常，SimpleExceptionHandler =====>> {}",e.getMessage(),e);
         return Result.error(e.getResultCode());
     }
 }
