@@ -25,6 +25,7 @@
 
 计划之后推送到中央仓库，在此之前只能下载源码
 ```https://github.com/Simple-Stark/common.git```
+
 运行maven命令
 ```
 maven clean
@@ -47,6 +48,7 @@ maven install
   - [x] 支持引用项目自定义消息返回
 - [x] 全局异常拦截
   - [x] 自定义异常类
+- [x] 全局日志配置
 - [x] mybatisPlus 代码自动生成器
     - [ ] 调整模板自动生成增删改查接口
     - [ ] 生成对应Vo
@@ -57,7 +59,8 @@ maven install
 ### v 1.0.0
     - 全局统一消息返回
     - 全局异常拦截及自定义异常
-    - MybatisPlus 最新代码生成器集成
+    - 全局日志配置
+    - MybatisPlus 代码生成器(3.5.1)集成
 ### 2021-09-29
     - CodeMsg构造方法使用 protected修饰，支持项目自定义消息返回
 
