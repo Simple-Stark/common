@@ -25,11 +25,11 @@ public class CodeMsg {
     private final String msg;
 
     /**
-     * 【构造器】私有构造器，防止直接创建
+     * 【构造器】protected修饰，支持子类继承扩展统一消息返回
      * @param code 自定义响应码
      * @param msg 自定义消息通知
      */
-    private CodeMsg(int code, String msg) {
+    protected CodeMsg(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
