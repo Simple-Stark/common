@@ -9,7 +9,7 @@
 </div>
 
 ## 作者
-### Simple Stark
+[![](https://img.shields.io/badge/author-%40SimpleStark-blue.svg)](https://github.com/Simple-Stark)
 - Github: [@Simple-Stark](https://github.com/Simple-Stark)
 - Blog:[烟霞志](https://simplestark.top)
 - Email:wrh_1125@163.com
@@ -20,7 +20,7 @@
 
 ## 使用
 
-示例项目：[![](https://img.shields.io/badge/@SimpleStark-SpringBootInit-blue.svg)](https://github.com/Simple-Stark/Spring-Boot-Init)
+最佳实践：[![](https://img.shields.io/badge/@SimpleStark-SpringBootInit-blue.svg)](https://github.com/Simple-Stark/Spring-Boot-Init)
 
 
 计划之后推送到中央仓库，在此之前只能下载源码
