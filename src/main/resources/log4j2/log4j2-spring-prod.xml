@@ -93,6 +93,16 @@ Configuration后面的status，这个用于设置log4j2自身内部的信息输�
     <!--Logger节点用来单独指定日志的形式，比如要为指定包下的class指定不同的日志级别等。-->
     <!--然后定义loggers，只有定义了logger并引入的appender，appender才会生效-->
     <loggers>
+        <!--过滤掉spring、mybatis、mybatis-plus的一些无用的DEBUG信息-->
+        <logger name="_org.springframework" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </logger>
+        <logger name="org.mybatis" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </logger>
+        <logger name="com.baomidou.mybatisplus" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </logger>
         <!--监控系统信息-->
         <!--若是additivity设为false，则 子Logger 只会在自己的appender里输出，而不会在 父Logger 的appender里输出。-->
         <Logger name="org.springframework" level="info" additivity="false">
