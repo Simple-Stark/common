@@ -18,6 +18,19 @@
     </properties>
     <dependencies>
 
+        <!-- 校验相关依赖包开始 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
+        <!-- 校验相关依赖包结束 -->
+
         <!-- MybatisPlus 开始 -->
         <dependency>
             <groupId>com.baomidou</groupId>
