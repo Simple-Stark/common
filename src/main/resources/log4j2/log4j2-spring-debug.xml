@@ -52,7 +52,7 @@ Configuration后面的status，这个用于设置log4j2自身内部的信息输�
             <AppenderRef ref="Console"/>
         </Logger>
 
-        <root level="debug">
+        <root level="info">
             <appender-ref ref="Console"/>
         </root>
     </loggers>
