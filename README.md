@@ -70,6 +70,7 @@
       - 字典转换工具
         - 增加缓存（项目启动时加载）
         - 增加下拉框接口
+      - jar包发布至中央仓库
 ## License
 
 [![](https://img.shields.io/badge/license-GPL2.0-orange.svg)](https://github.com/Simple-Stark/common/blob/master/LICENSE)
