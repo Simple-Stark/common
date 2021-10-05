@@ -41,26 +41,19 @@
 
 最佳实践：[![](https://img.shields.io/badge/@SimpleStark-SpringBootInit-blue.svg)](https://github.com/Simple-Stark/Spring-Boot-Init)
 
-
-计划之后推送到中央仓库，在此之前只能下载源码
-```https://github.com/Simple-Stark/common.git```
-
-运行maven命令
+2021-10-05 推送common包至中央仓库，在maven 项目中可以直接引入依赖
 ```
-maven clean
-maven install    
-```
-将这个jar包安装到你的本地maven仓库
-
-在你需要引用的项目中添加以下依赖，刷新maven即可使用
-```
-<!-- 自定义Common包 -->
 <dependency>
-    <groupId>com.simple</groupId>
-    <artifactId>common</artifactId>
-    <version>1.0.0</version>
+  <groupId>com.simplestark</groupId>
+  <artifactId>common</artifactId>
+  <version>1.0.0</version>
 </dependency>
 ```
+
+其他方式请参考：https://search.maven.org/artifact/com.simplestark/common/1.0.0/jar
+
+~~计划之后推送到中央仓库，在此之前只能下载源码自己mvn install安装到本地~~
+```https://github.com/Simple-Stark/common.git```
 
 ## 更新日志
 ### v 1.0.0

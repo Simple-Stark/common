@@ -5,8 +5,7 @@ import com.simple.common.result.CodeMsg;
 /**
  * 自定义异常
  *
- * @author Simple
- * @date 2020-11-16
+ * @author Simple 2020-11-16
  */
 public class SimpleException extends RuntimeException{
     /**

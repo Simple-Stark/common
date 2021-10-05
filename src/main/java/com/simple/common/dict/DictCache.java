@@ -15,8 +15,7 @@ import java.util.stream.Collectors;
 
 /**
  * 字典缓存容器
- * @author Simple
- * @date 2021/10/4 14:25
+ * @author Simple 2021/10/4
  */
 public class DictCache {
 

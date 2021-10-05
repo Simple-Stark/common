@@ -12,8 +12,7 @@ import java.util.List;
 
 /**
  * 字典控制层
- * @author Simple
- * @date 2021/10/4 11:14
+ * @author Simple 2021/10/4
  */
 @RestController
 @RequestMapping("/dict")

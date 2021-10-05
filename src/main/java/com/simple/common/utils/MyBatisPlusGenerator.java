@@ -16,8 +16,7 @@ import java.util.Map;
 /**
  * MyBatisPlus 代码自动生成器
  *
- * @author Simple
- * @date 2021/9/26 9:50
+ * @author Simple 2021/9/26
  */
 @Component
 public class MyBatisPlusGenerator {

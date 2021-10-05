@@ -15,8 +15,7 @@ import java.util.stream.Collectors;
 
 /**
  * 字典转换工具类
- * @author Simple
- * @date 2021/10/3 14:56
+ * @author Simple 2021/10/3
  */
 public class DictCoverUtil {
 
@@ -38,6 +37,7 @@ public class DictCoverUtil {
     /**
      * 【工具】 按照注解 转换指定对象的字典编码
      * @param object 需要转换的对象
+     * @param <T> 对象类型
      */
     public <T> void coverCodeToMean(T object) {
         // 判空
@@ -94,6 +94,7 @@ public class DictCoverUtil {
     /**
      * 【工具，重载】 按照注解 转换指定对象列表的字典编码
      * @param list 需要转换的对象列表
+     * @param <T> 对象类型
      */
     public <T> void coverCodeToMean(List<T> list) {
         if (CollectionUtils.isNotEmpty(list)) {

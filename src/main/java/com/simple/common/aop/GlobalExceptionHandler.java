@@ -16,8 +16,7 @@ import java.util.List;
 /**
  * 全局异常拦截器
  *
- * @author Simple
- * @date 2021/9/23 19:48
+ * @author Simple 2021/9/23
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {

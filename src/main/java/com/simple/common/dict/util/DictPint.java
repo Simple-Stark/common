@@ -4,8 +4,7 @@ import java.lang.annotation.*;
 
 /**
  * 字典转换工具注解
- * @author Simple
- * @date 2021/10/2 18:39
+ * @author Simple 2021/10/2
  */
 @Documented
 @Target(value= ElementType.FIELD)

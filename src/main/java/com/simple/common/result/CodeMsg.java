@@ -3,8 +3,7 @@ package com.simple.common.result;
 /**
  * 全局统一消息与返回消息对应类
  *
- * @author Simple
- * @date 2021/9/22 22:08
+ * @author Simple 2021/9/22
  */
 public class CodeMsg {
     /**

@@ -7,8 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * 单个dictCode 对应的字典
- * @author Simple
- * @date 2021/10/4 18:41
+ * @author Simple 2021/10/4
  */
 public class SingleDict {
 
