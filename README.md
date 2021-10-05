@@ -18,6 +18,25 @@
 
 一个简单的项目公共jar包，一直有着做开源项目的想法，这个项目应该可以算做是地基，在以后的开源项目中我想应该是用得到。
 
+## 支持功能
+- [x] 全局统一消息返回
+  - [x] 支持引用项目自定义消息返回
+- [x] 全局异常拦截
+  - [x] 自定义异常类
+- [x] 全局日志配置
+- [x] mybatisPlus 代码自动生成器
+  - [ ] 调整模板自动生成增删改查接口
+  - [ ] 生成对应Vo
+- [ ] MybatisPlus 分页插件
+- [x] 字典工具类
+  - [x] 字典数据放入缓存
+  - [ ] 生成控制层接口供前端调用
+    - [x] 下拉框接口
+    - [ ] 查询所有字典缓存接口
+    - [ ] 手动添加、删除、修改字典接口
+    - [ ] 手动刷新缓存容器接口
+  - [ ] 自定义定时刷新字典缓存容器
+
 ## 使用
 
 最佳实践：[![](https://img.shields.io/badge/@SimpleStark-SpringBootInit-blue.svg)](https://github.com/Simple-Stark/Spring-Boot-Init)
@@ -43,20 +62,6 @@ maven install
 </dependency>
 ```
 
-## 待办事项
-- [x] 全局统一消息返回
-    - [x] 支持引用项目自定义消息返回
-- [x] 全局异常拦截
-    - [x] 自定义异常类
-- [x] 全局日志配置
-- [x] mybatisPlus 代码自动生成器
-    - [ ] 调整模板自动生成增删改查接口
-    - [ ] 生成对应Vo
-- [ ] MybatisPlus 分页插件
-- [x] 字典工具类
-    - [ ] 字典数据放入缓存
-    - [ ] 生成控制层接口供前端调用
-
 ## 更新日志
 ### v 1.0.0
     - 2021-09-26
@@ -68,8 +73,10 @@ maven install
       - CodeMsg构造方法使用 protected修饰，支持项目自定义消息返回
     - 2021-10-03
       - 增加基础版字典转换工具类
-
-
+    - 2021-10-05
+      - 字典转换工具
+        - 增加缓存（项目启动时加载）
+        - 增加下拉框接口
 ## License
 
 [![](https://img.shields.io/badge/license-GPL2.0-orange.svg)](https://github.com/Simple-Stark/common/blob/master/LICENSE)

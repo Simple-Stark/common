@@ -1,37 +1,51 @@
 package com.simple.common.dict.util;
 
-import com.simple.common.dict.service.SysDictServiceImpl;
+import com.simple.common.dict.DictCache;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * 字典转换工具类
  * @author Simple
  * @date 2021/10/3 14:56
  */
-@Component
-public class DictUtil {
+public class DictCoverUtil {
 
-    @Resource
-    SysDictServiceImpl sysDictService;
+    private final Logger log = LoggerFactory.getLogger(DictCoverUtil.class);
 
-    private final Logger log = LoggerFactory.getLogger(DictUtil.class);
+    /**
+     * 缓存容器
+     */
+    private final DictCache dictCache;
 
+    /**
+     * 【构造器】使用指定缓存容器创建一个字典转换工具类
+     * @param dictCache 缓存容器
+     */
+    public DictCoverUtil(DictCache dictCache) {
+        this.dictCache = dictCache;
+    }
+
+    /**
+     * 【工具】 按照注解 转换指定对象的字典编码
+     * @param object 需要转换的对象
+     */
     public <T> void coverCodeToMean(T object) {
         // 判空
         if (null == object) {
             return;
         }
         // 获取类属性，转Map（key：属性名，value：属性对象）
-        Map<String, Field> fieldMap = DictDataUtil.getObjectFieldMap(object);
+        Map<String, Field> fieldMap = getObjectFieldMap(object);
 
         // 遍历循环处理数据
         for (Map.Entry<String, Field> entry : fieldMap.entrySet()) {
@@ -48,7 +62,7 @@ public class DictUtil {
                         if (StringUtils.isNotBlank(code)) {
                             // 值不为空，进行转换
                             field.setAccessible(true);
-                            String meaning = sysDictService.getMeaning(dictCode, code);
+                            String meaning = dictCache.getMeaning(dictCode,code);
                             // 获取前置属性
                             String beforeValueTo = field.getAnnotation(DictPint.class).beforeValueTo();
                             if (StringUtils.isNotBlank(beforeValueTo)) {
@@ -69,19 +83,39 @@ public class DictUtil {
                                 field.set(object, meaning);
                             }
                         }
-                    } catch (IllegalAccessException e) {
-                        log.warn("字典转换发生异常：{}",e.getMessage(),e);
+                    } catch (Exception e) {
+                        log.warn("{}对象字典转换发生异常：{}",object.toString(),e.getMessage(),e);
                     }
                 }
             }
         }
     }
 
+    /**
+     * 【工具，重载】 按照注解 转换指定对象列表的字典编码
+     * @param list 需要转换的对象列表
+     */
     public <T> void coverCodeToMean(List<T> list) {
         if (CollectionUtils.isNotEmpty(list)) {
             for (T t : list) {
                 coverCodeToMean(t);
             }
+        }
+    }
+
+    /**
+     * 将对象的属性置入Map中，避免遍历
+     *
+     * @param object obj
+     * @return Map(Obj Name - Obj)
+     */
+    private Map<String, Field> getObjectFieldMap(Object object) {
+        // 获取所有属性
+        Field[] fields = object.getClass().getDeclaredFields();
+        if (fields.length > 0) {
+            return Arrays.stream(fields).collect(Collectors.toMap(Field::getName, f -> f));
+        } else {
+            return new HashMap<>(0);
         }
     }
 }

@@ -1,10 +1,13 @@
 package com.simple.common.dict.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+
 /**
  * 字典信息实体类
  * @author Simple
  * @since 2021-10-03
  */
+@TableName("sys_dict")
 public class SysDict {
 
     /**
@@ -15,25 +18,25 @@ public class SysDict {
     /**
      * 字典名称
      */
-    private String typeName;
+    private String dictName;
 
     /**
      * 字典编码
      */
-    private String typeCode;
+    private String dictCode;
 
     /**
-     * 对照（代码）
+     * 字典映射（key）
      */
     private String code;
 
     /**
-     * 对照（值）
+     * 字典映射（value）
      */
     private String meaning;
 
     /**
-     * 键值对序列号
+     * 键值对序列号（排序用）
      */
     private Integer seqNum;
 
@@ -46,8 +49,8 @@ public class SysDict {
      * 数据库表字段常量
      */
     public static final String COL_ID = "id";
-    public static final String COL_TYPE_NAME = "type_name";
-    public static final String COL_TYPE_CODE = "type_code";
+    public static final String COL_DICT_NAME = "dict_name";
+    public static final String COL_DICT_CODE = "dict_code";
     public static final String COL_CODE = "code";
     public static final String COL_MEANING = "meaning";
     public static final String COL_SEQ_NUM = "seq_num";
@@ -61,20 +64,20 @@ public class SysDict {
         this.id = id;
     }
 
-    public String getTypeName() {
-        return typeName;
+    public String getDictName() {
+        return dictName;
     }
 
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
+    public void setDictName(String dictName) {
+        this.dictName = dictName;
     }
 
-    public String getTypeCode() {
-        return typeCode;
+    public String getDictCode() {
+        return dictCode;
     }
 
-    public void setTypeCode(String typeCode) {
-        this.typeCode = typeCode;
+    public void setDictCode(String dictCode) {
+        this.dictCode = dictCode;
     }
 
     public String getCode() {
@@ -113,8 +116,8 @@ public class SysDict {
     public String toString() {
         return "SysDict{" +
                 "id=" + id +
-                ", typeName='" + typeName + '\'' +
-                ", typeCode='" + typeCode + '\'' +
+                ", dictName='" + dictName + '\'' +
+                ", dictCode='" + dictCode + '\'' +
                 ", code='" + code + '\'' +
                 ", meaning='" + meaning + '\'' +
                 ", seqNum=" + seqNum +
