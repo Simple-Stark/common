@@ -31,7 +31,11 @@ public class SimpleException extends RuntimeException{
         this.codeMsg = codeMsg;
     }
 
-    public CodeMsg getResultCode() {
+    /**
+     * 【Get】获取自定义错误信息
+     * @return 自定义异常信息
+     */
+    public CodeMsg getCodeMsg() {
         return codeMsg;
     }
 
