@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 参数校验处理方法
+     * 前端传入参数校验处理方法
      * @param e 参数校验异常
      * @return com.wrh.basis.common.Result 实例
      */
@@ -44,7 +44,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public Result<Void> error(BindException e) {
         // 打印日志
-        log.error("参数校验异常，BindExceptionHandler =====>> {}",e.getMessage(),e);
+        log.error("前端传入参数校验异常，BindExceptionHandler =====>> {}",e.getMessage(),e);
         List<ObjectError> errors = e.getAllErrors();
         ObjectError error = errors.get(0);
         String msg = error.getDefaultMessage();
@@ -61,6 +61,19 @@ public class GlobalExceptionHandler {
     public Result<Void> error(SimpleException e) {
         // 打印日志
         log.error("自定义异常，SimpleExceptionHandler =====>> {}",e.getMessage(),e);
-        return Result.error(e.getResultCode());
+        return Result.error(e.getCodeMsg());
+    }
+
+    /**
+     * 业务非法参数校验异常处理方法（Spring 的 Assert）
+     * @param e 参数校验异常
+     * @return com.wrh.basis.common.Result 实例
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseBody
+    public Result<Void> error(IllegalArgumentException e) {
+        // 打印日志
+        log.error("业务非法参数校验，IllegalArgumentExceptionHandler =====>> {}",e.getMessage(),e);
+        return Result.error(CodeMsg.BASE_BUSINESS_ERROR.fillArgs(e.getMessage()));
     }
 }
