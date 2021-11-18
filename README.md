@@ -2,7 +2,7 @@
 
 <div style="text-align: center;">
 
-[![](https://img.shields.io/badge/blog-%40SimpleStark-blue.svg)](https://simplestark.top)
+[![](https://img.shields.io/badge/blog-%40SimpleStark-blue.svg)](https://simplestark.com)
 [![](https://img.shields.io/badge/SpringBoot-2.3.12.RELEASE-blue.svg)]({https://docs.spring.io/spring-boot/docs/2.3.12.RELEASE/reference/html/})
 [![](https://img.shields.io/badge/license-GPL2.0-orange.svg)](https://github.com/Simple-Stark/common/blob/master/LICENSE)
 
@@ -11,7 +11,7 @@
 ## 作者
 [![](https://img.shields.io/badge/author-%40SimpleStark-blue.svg)](https://github.com/Simple-Stark)
 - Github: [@Simple-Stark](https://github.com/Simple-Stark)
-- Blog:[烟霞志](https://simplestark.top)
+- Blog:[烟霞志](https://simplestark.com)
 - Email:wrh_1125@163.com
 
 ## 简介
