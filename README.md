@@ -71,11 +71,10 @@
         - 增加缓存（项目启动时加载）
         - 增加下拉框接口
       - jar包发布至中央仓库
-
-### v1.0.1
     - 2021-11-18
       - 全局异常拦截增加IllegalArgumentException（非法参数异常，主要用于拦截Spring Assert）
       - SimpleException 自定义异常获取异常信息方法名修改
+    
 ## License
 
 [![](https://img.shields.io/badge/license-GPL2.0-orange.svg)](https://github.com/Simple-Stark/common/blob/master/LICENSE)
