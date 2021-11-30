@@ -87,7 +87,7 @@ public class GlobalExceptionHandler {
     /**
      * 自定义测试异常处理方法
      * @param e 自定义测试异常类
-     * @return com.wrh.basis.common.Result 实例
+     * @return 异常信息
      */
     @ExceptionHandler(SimpleException.class)
     @ResponseBody
@@ -100,7 +100,7 @@ public class GlobalExceptionHandler {
     /**
      * 业务非法参数校验异常处理方法（Spring 的 Assert）
      * @param e 参数校验异常
-     * @return com.wrh.basis.common.Result 实例
+     * @return 业务异常信息
      */
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseBody
