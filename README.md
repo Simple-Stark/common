@@ -55,7 +55,7 @@
 ~~计划之后推送到中央仓库，在此之前只能下载源码自己mvn install安装到本地~~
 ```https://github.com/Simple-Stark/common.git```
 
-## [更新日志](https://github.com/Simple-Stark/UpdateLog.md)
+## [更新日志](https://github.com/Simple-Stark/common/blob/master/UpdateLog.md)
     
 ## License
 
