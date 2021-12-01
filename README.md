@@ -27,7 +27,7 @@
 - [x] mybatisPlus 代码自动生成器
   - [ ] 调整模板自动生成增删改查接口
   - [ ] 生成对应Vo
-- [ ] MybatisPlus 分页插件
+- [x] MybatisPlus 分页插件
 - [x] 字典工具类
   - [x] 字典数据放入缓存
   - [ ] 生成控制层接口供前端调用
@@ -55,30 +55,11 @@
 ~~计划之后推送到中央仓库，在此之前只能下载源码自己mvn install安装到本地~~
 ```https://github.com/Simple-Stark/common.git```
 
-## 更新日志
-### v 1.0.0
-    - 2021-09-26
-      - 全局统一消息返回
-      - 全局异常拦截及自定义异常
-      - 全局日志配置
-      - MybatisPlus 代码生成器(3.5.1)集成
-    - 2021-09-29
-      - CodeMsg构造方法使用 protected修饰，支持项目自定义消息返回
-    - 2021-10-03
-      - 增加基础版字典转换工具类
-    - 2021-10-05
-      - 字典转换工具
-        - 增加缓存（项目启动时加载）
-        - 增加下拉框接口
-      - jar包发布至中央仓库
-    - 2021-11-18
-      - 全局异常拦截增加IllegalArgumentException（非法参数异常，主要用于拦截Spring Assert）
-      - SimpleException 自定义异常获取异常信息方法名修改
+## [更新日志](https://github.com/Simple-Stark/UpdateLog.md)
     
 ## License
 
 [![](https://img.shields.io/badge/license-GPL2.0-orange.svg)](https://github.com/Simple-Stark/common/blob/master/LICENSE)
 
-## 
-
+##
 
