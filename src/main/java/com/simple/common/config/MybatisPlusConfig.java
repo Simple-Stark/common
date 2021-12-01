@@ -37,7 +37,7 @@ public class MybatisPlusConfig {
         DbType dbType = getDbType();
         // 分页插件
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(dbType));
-        log.info("Mybatis-Plus 插件拦截器加载完成（分页插件、乐观锁插件），分页插件数据库类型为：{}",dbType.getDesc());
+        log.info("Mybatis-Plus 插件拦截器加载完成{}，分页插件数据库类型为：{}",interceptor.getInterceptors(),dbType.getDesc());
         return interceptor;
     }
 
