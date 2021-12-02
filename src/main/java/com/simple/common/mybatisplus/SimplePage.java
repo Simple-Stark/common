@@ -3,13 +3,18 @@ package com.simple.common.mybatisplus;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.simple.common.exception.SimpleException;
+import com.simple.common.result.CodeMsg;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static com.simple.common.mybatisplus.BasePage.*;
+
 /**
+ * 自定义分页插件
  * @author Simple 2021/12/1
  */
 public class SimplePage<T> implements IPage<T> {
@@ -74,6 +79,28 @@ public class SimplePage<T> implements IPage<T> {
      */
     public SimplePage(long current, long size) {
         this(current, size, 0);
+    }
+
+    /**
+     * 【构造器】根据BasePag创建SimplePage
+     * @param page 基础分页条件
+     */
+    public SimplePage(BasePage page) {
+        this(page.getCurrent(), page.getSize());
+        for (String s : page.getOrderBy()) {
+            String[] orderBy = s.split(":");
+            String sort = orderBy[1].toLowerCase();
+            switch (sort){
+                case SORT_DESC:
+                    this.addOrder(OrderItem.desc(orderBy[0]));
+                    break;
+                case SORT_ASC:
+                    this.addOrder(OrderItem.asc(orderBy[0]));
+                    break;
+                default:
+                    throw new SimpleException(CodeMsg.BASE_PAGE_SORT_ERROR.fillArgs("排序规则错误！"));
+            }
+        }
     }
 
     public SimplePage(long current, long size, long total) {
