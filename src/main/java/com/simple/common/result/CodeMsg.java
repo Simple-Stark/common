@@ -10,9 +10,10 @@ public class CodeMsg {
      * 全局通用错误码
      */
     public static CodeMsg BASE_SUCCESS = new CodeMsg(200, "success");
-    public static CodeMsg BASE_ERROR = new CodeMsg(100, "服务端异常：%s");
+    public static CodeMsg BASE_ERROR = new CodeMsg(500, "服务端异常：%s");
     public static CodeMsg BASE_BIND_ERROR = new CodeMsg(400, "参数校验异常：%s");
-    public static CodeMsg BASE_BUSINESS_ERROR = new CodeMsg(500, "业务异常：%s");
+    public static CodeMsg BASE_BUSINESS_ERROR = new CodeMsg(100, "业务异常：%s");
+    public static CodeMsg BASE_PAGE_SORT_ERROR = new CodeMsg(101, "分页异常：%s");
 
     /**
      * 响应状态码
