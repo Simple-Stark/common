@@ -114,9 +114,19 @@ public class MyBatisPlusGenerator {
                 // 生成字段常量
                 .enableColumnConstant()
                 // 主键生成策略
-                .idType(IdType.AUTO)
+                .idType(IdType.ASSIGN_ID)
                 // 开启 lombok 模型
                 .enableLombok()
+                .build();
+
+        // 模板配置
+        TemplateConfig templateConfig = new TemplateConfig.Builder()
+                .entity("/templates/entity.java")
+                // .service("/templates/service.java")
+                // .serviceImpl("/templates/serviceImpl.java")
+                // .mapper("/templates/mapper.java")
+                // .mapperXml("/templates/mapper.xml")
+                // .controller("/templates/controller.java")
                 .build();
 
         // 设置策略并生成代码
