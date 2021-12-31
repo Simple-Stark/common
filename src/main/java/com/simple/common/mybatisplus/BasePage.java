@@ -2,7 +2,6 @@ package com.simple.common.mybatisplus;
 
 /**
  * 分页查询基本条件，分页查询Vo的父类
- * 请求示例： size=10&current=1&orderBy=age:asc&orderBy=name:desc
  * @author Simple 2021/12/2
  */
 public class BasePage {
@@ -24,7 +23,7 @@ public class BasePage {
      */
     private long current = 1;
     /**
-     * 排序字段
+     * 排序字段 示例：orderBy=age:asc&orderBy=name:desc
      */
     private String[] orderBy;
 
