@@ -1,6 +1,5 @@
-package com.simple.common.dict.util;
+package com.simple.common.dict;
 
-import com.simple.common.dict.DictCache;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

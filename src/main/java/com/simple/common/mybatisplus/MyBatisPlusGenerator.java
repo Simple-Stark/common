@@ -1,4 +1,4 @@
-package com.simple.common.utils;
+package com.simple.common.mybatisplus;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;

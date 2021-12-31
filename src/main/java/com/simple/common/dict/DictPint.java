@@ -1,4 +1,4 @@
-package com.simple.common.dict.util;
+package com.simple.common.dict;
 
 import java.lang.annotation.*;
 
