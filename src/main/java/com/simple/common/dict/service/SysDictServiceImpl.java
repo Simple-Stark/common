@@ -1,7 +1,7 @@
 package com.simple.common.dict.service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.simple.common.dict.dao.SysDictDao;
+import com.simple.common.dict.mapper.SysDictDao;
 import com.simple.common.dict.entity.SysDict;
 import org.springframework.stereotype.Service;
 

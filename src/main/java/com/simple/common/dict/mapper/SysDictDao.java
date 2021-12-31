@@ -1,4 +1,4 @@
-package com.simple.common.dict.dao;
+package com.simple.common.dict.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.simple.common.dict.entity.SysDict;
