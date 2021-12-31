@@ -121,16 +121,22 @@ public class MyBatisPlusGenerator {
 
         // 模板配置
         TemplateConfig templateConfig = new TemplateConfig.Builder()
-                .entity("/templates/entity.java")
-                // .service("/templates/service.java")
-                // .serviceImpl("/templates/serviceImpl.java")
-                // .mapper("/templates/mapper.java")
-                // .mapperXml("/templates/mapper.xml")
-                // .controller("/templates/controller.java")
+                .entity("/templates/SimpleEntity.java")
+                .service("/templates/SimpleService.java")
+                .serviceImpl("/templates/SimpleServiceImpl.java")
+                .mapper("/templates/SimpleMapper.java")
+                .mapperXml("/templates/SimpleMapper.xml")
+                .controller("/templates/SimpleController.java")
                 .build();
+
+        // 设置自定义输出文件
+        InjectionConfig injectionConfig = new InjectionConfig.Builder()
+                .build();
+
 
         // 设置策略并生成代码
         generator.global(globalConfig)
+                .template(templateConfig)
                 .packageInfo(packageConfig)
                 .strategy(strategyConfig)
                 // 使用Freemarker引擎模板，默认的是Velocity引擎模板
