@@ -85,7 +85,7 @@ public class MyBatisPlusGenerator {
                 .dateType(DateType.ONLY_DATE)
                 .build();
 
-        // 自定义输出位置，主要用于mapper.xml
+        // 自定义输出位置
         Map<OutputFile, String> pathInfo = new HashMap<>(16);
         pathInfo.put(OutputFile.mapperXml,xmlSrcDir);
 
@@ -130,15 +130,23 @@ public class MyBatisPlusGenerator {
                 .build();
 
         // 设置自定义输出文件
-        InjectionConfig injectionConfig = new InjectionConfig.Builder()
-                .build();
+        // Map<String, String> customFile = new HashMap<>(1);
+        // customFile.put("PageVo.java", "/templates/SimplePageVo.java.ftl");
+        // InjectionConfig injectionConfig = new InjectionConfig.Builder()
+        //         .customFile(customFile)
+        //         .build();
 
 
         // 设置策略并生成代码
         generator.global(globalConfig)
+                // 模板配置
                 .template(templateConfig)
+                // 包配置
                 .packageInfo(packageConfig)
+                // 策略配置
                 .strategy(strategyConfig)
+                // 注入配置
+                // .injection(injectionConfig)
                 // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .execute(new FreemarkerTemplateEngine());
     }

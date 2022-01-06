@@ -1,15 +1,14 @@
 package ${package.Service};
 
+import com.simple.common.mybatisplus.SimplePage;
 import ${package.Entity}.${entity};
 import ${superServiceClassPackage};
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * ${table.comment!} 服务接口
  *
  * @author ${author} ${date}
  */
-@Slf4j
 public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
 
     /**

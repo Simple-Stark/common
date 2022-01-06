@@ -1,13 +1,9 @@
 package ${package.Controller};
 
-
-import org.springframework.web.bind.annotation.RequestMapping;
-
-<#if restControllerStyle>
-import org.springframework.web.bind.annotation.RestController;
-<#else>
-import org.springframework.stereotype.Controller;
-</#if>
+import com.simple.common.mybatisplus.SimplePage;
+import com.simple.common.result.Result;
+import ${package.Entity}.${table.entity};
+import org.springframework.web.bind.annotation.*;
 <#if superControllerClassPackage??>
 import ${superControllerClassPackage};
 </#if>
@@ -56,7 +52,7 @@ public class ${table.controllerName} {
 
     /**
     * 【新增】添加${table.comment}信息
-    * @param ${table.entityName} 用户实体
+    * @param ${table.name} 用户实体
     * @return 新增${table.comment}的主键
     * @author ${author} ${date}
     */
@@ -72,7 +68,7 @@ public class ${table.controllerName} {
     * @author ${author} ${date}
     */
     @GetMapping("/getById")
-    public Result< ${table.entityName}> getById(@NotBlank(message = "主键id不允许为空") @RequestParam String id) {
+    public Result<${table.entityName}> getById(@NotBlank(message = "主键id不允许为空") @RequestParam String id) {
         ${table.entityName} ${table.name} = ${table.name}Service.getById(id);
         return Result.success(${table.name});
     }
