@@ -3,6 +3,7 @@ package ${package.Service};
 import com.simple.common.mybatisplus.SimplePage;
 import ${package.Entity}.${entity};
 import ${superServiceClassPackage};
+import ${packageQuery}.${table.entityName}PageQuery;
 
 /**
  * ${table.comment!} 服务接口
@@ -21,9 +22,9 @@ public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
 
     /**
      * 【查询】${table.entityName}分页查询列表
-     * @param vo 查询条件
+     * @param pageQuery 查询条件
      * @return 分页数据
      * @author ${author} ${date}
      */
-    SimplePage<${table.entityName}> pageList(${table.entityName}PageVo vo);
+    SimplePage<${table.entityName}> pageList(${table.entityName}PageQuery pageQuery);
 }

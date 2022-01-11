@@ -1,14 +1,16 @@
 package com.simple.common.mybatisplus;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
-import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -85,9 +87,11 @@ public class MyBatisPlusGenerator {
                 .dateType(DateType.ONLY_DATE)
                 .build();
 
-        // 自定义输出位置
-        Map<OutputFile, String> pathInfo = new HashMap<>(16);
+        // 自定义文件输出位置
+        Map<OutputFile, String> pathInfo = new HashMap<>(2);
         pathInfo.put(OutputFile.mapperXml,xmlSrcDir);
+        // vo、query等文件
+        pathInfo.put(OutputFile.other,joinPath(outPutDir,packName));
 
         // 包配置
         PackageConfig packageConfig = new PackageConfig.Builder()
@@ -129,12 +133,17 @@ public class MyBatisPlusGenerator {
                 .controller("/templates/SimpleController.java")
                 .build();
 
-        // 设置自定义输出文件
-        // Map<String, String> customFile = new HashMap<>(1);
-        // customFile.put("PageVo.java", "/templates/SimplePageVo.java.ftl");
-        // InjectionConfig injectionConfig = new InjectionConfig.Builder()
-        //         .customFile(customFile)
-        //         .build();
+        // 设置自定义注入属性
+        // 自定义文件
+        Map<String, String> customFile = new HashMap<>(1);
+        customFile.put("PageQuery.java", "/templates/SimplePageQuery.java.ftl");
+        // 自定义属性
+        Map<String, Object> customMap = new HashMap<>();
+        customMap.put("packageQuery", packName + ".vo.query");
+        InjectionConfig injectionConfig = new InjectionConfig.Builder()
+                .customFile(customFile)
+                .customMap(customMap)
+                .build();
 
 
         // 设置策略并生成代码
@@ -146,8 +155,26 @@ public class MyBatisPlusGenerator {
                 // 策略配置
                 .strategy(strategyConfig)
                 // 注入配置
-                // .injection(injectionConfig)
-                // 使用Freemarker引擎模板，默认的是Velocity引擎模板
-                .execute(new FreemarkerTemplateEngine());
+                .injection(injectionConfig)
+                // 使用自定义引擎模板，重写其它文件输出方法生成Vo等文件
+                .execute(new SimpleFreemarkerEngine());
+    }
+
+    /**
+     * 【工具】连接路径字符串
+     *
+     * @param parentDir   路径常量字符串
+     * @param packageName 包名
+     * @return 连接后的路径
+     */
+    private String joinPath(String parentDir, String packageName) {
+        if (StringUtils.isBlank(parentDir)) {
+            parentDir = javaSrcDir;
+        }
+        if (!StringUtils.endsWith(parentDir, File.separator)) {
+            parentDir += File.separator;
+        }
+        packageName = packageName.replaceAll("\\.", StringPool.BACK_SLASH + File.separator);
+        return parentDir + packageName;
     }
 }

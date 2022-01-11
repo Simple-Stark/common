@@ -1,20 +1,25 @@
-package ${package.Entity};
+package ${packageQuery};
 
 <#list table.importPackages as pkg>
+    <#if pkg?contains("com.baomidou.mybatisplus")>
+    <#else >
 import ${pkg};
+    </#if>
 </#list>
 import com.simple.common.mybatisplus.BasePage;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
 *
-* ${table.comment!} 分页Vo
+* ${table.comment!} 分页查询条件
 *
 * @author ${author} ${date}
 */
-@Dat
+@Data
+@EqualsAndHashCode(callSuper = true)
 <#if entitySerialVersionUID>
-public class ${table.entityName}PageVo extends BasePage implements Serializable {
+public class ${table.entityName}PageQuery extends BasePage implements Serializable {
 <#else>
 public class ${table.entityName} extends BasePage {
 </#if>
