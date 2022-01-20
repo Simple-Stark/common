@@ -87,6 +87,10 @@ public class SimplePage<T> implements IPage<T> {
      */
     public SimplePage(BasePage page) {
         this(page.getCurrent(), page.getSize());
+        // 排序判空
+        if (page.getOrderBy() == null) {
+            return;
+        }
         for (String s : page.getOrderBy()) {
             String[] orderBy = s.split(":");
             String sort = orderBy[1].toLowerCase();
