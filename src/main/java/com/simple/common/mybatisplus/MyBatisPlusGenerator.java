@@ -83,8 +83,8 @@ public class MyBatisPlusGenerator {
                 .author(author)
                 // 文件输出目录
                 .outputDir(outPutDir)
-                // 数据库时间类型 到 实体类时间类型 对应策略，此处为”只使用 java.util.date 代替“
-                .dateType(DateType.ONLY_DATE)
+                // 数据库时间类型到实体类时间类型对应策略
+                .dateType(DateType.TIME_PACK)
                 .build();
 
         // 自定义文件输出位置
@@ -115,6 +115,8 @@ public class MyBatisPlusGenerator {
                 .enableRestStyle()
                 // 实体策略配置
                 .entityBuilder()
+                // 实体继承父类配置
+                .superClass(BaseEntity.class)
                 // 生成字段常量
                 .enableColumnConstant()
                 // 主键生成策略
@@ -161,11 +163,11 @@ public class MyBatisPlusGenerator {
     }
 
     /**
-     * 【工具】连接路径字符串
+     * 【工具】将包名转换为文件夹路径与输出路径拼接
      *
      * @param parentDir   路径常量字符串
      * @param packageName 包名
-     * @return 连接后的路径
+     * @return 拼接后的路径
      */
     private String joinPath(String parentDir, String packageName) {
         if (StringUtils.isBlank(parentDir)) {
