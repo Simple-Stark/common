@@ -49,6 +49,26 @@ public class BaseEntity implements Serializable {
     @TableField(value = "version")
     private String version;
 
+    /**
+     *  数据库列名常量
+     */
+    public static final String COL_CREATE_USER = "create_user";
+    public static final String COL_CREATE_TIME = "create_time";
+    public static final String COL_UPDATE_USER = "update_user";
+    public static final String COL_UPDATE_TIME = "update_time";
+    public static final String COL_DEL_FLAG = "del_flag";
+    public static final String COL_VERSION = "version";
+    /**
+     *  实体属性常量
+     */
+    public static final String FIELD_CREATE_USER = "createUser";
+    public static final String FIELD_CREATE_TIME = "createTime";
+    public static final String FIELD_UPDATE_USER = "updateUser";
+    public static final String FIELD_UPDATE_TIME = "updateTime";
+    public static final String FIELD_DEL_FLAG = "delFlag";
+    public static final String FIELD_VERSION = "version";
+
+
     public String getCreateUser() {
         return createUser;
     }
