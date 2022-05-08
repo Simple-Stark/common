@@ -34,7 +34,7 @@ public class BaseEntity implements Serializable {
     /**
      * 更新时间
      */
-    @TableField(value = "update_Time", fill = FieldFill.INSERT_UPDATE)
+    @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
     private Date updateTime;
 
     /**
