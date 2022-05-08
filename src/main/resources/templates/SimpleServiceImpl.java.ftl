@@ -21,7 +21,12 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     @Override
     public String insert(${table.entityName} ${table.name}) {
         save(${table.name});
-        return ${table.name}.get${table.entityName}Id();
+        <#list table.fields as field>
+            <#if field.keyFlag>
+        return ${table.name}.get${field.name ? cap_first}();
+                <#break>
+            </#if>
+        </#list>
     }
 
     @Override
