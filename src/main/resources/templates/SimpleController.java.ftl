@@ -2,15 +2,16 @@ package ${package.Controller};
 
 import com.simple.common.mybatisplus.SimplePage;
 import com.simple.common.result.Result;
+import ${package.Entity}.${entity};
+import ${package.Service}.${table.serviceName};
+import ${packageResult}.${table.entityName}PageResult;
+import ${packageQuery}.${table.entityName}PageQuery;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import javax.validation.constraints.NotBlank;
 <#if superControllerClassPackage??>
 import ${superControllerClassPackage};
 </#if>
-import org.springframework.validation.annotation.Validated;
-import javax.validation.constraints.NotBlank;
-import ${package.Service}.${table.serviceName};
-import ${package.Entity}.${entity};
-import ${packageQuery}.${table.entityName}PageQuery;
 
 /**
  * ${table.comment!} 控制层
@@ -46,8 +47,8 @@ public class ${table.controllerName} {
     * @author ${author} ${date}
     */
     @GetMapping("/list")
-    public Result<SimplePage<${table.entityName}>> list(${table.entityName}PageQuery pageQuery) {
-        SimplePage<${table.entityName}> pageList = ${table.name}Service.pageList(pageQuery);
+    public Result<SimplePage<${table.entityName}PageResult>> list(${table.entityName}PageQuery pageQuery) {
+        SimplePage<${table.entityName}PageResult> pageList = ${table.name}Service.pageList(pageQuery);
         return Result.success(pageList);
     }
 

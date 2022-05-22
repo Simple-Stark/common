@@ -5,8 +5,8 @@
 <#if enableCache>
     <!-- 开启二级缓存 -->
     <cache type="${cacheClassName}"/>
-
 </#if>
+
 <#if baseResultMap>
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="${package.Entity}.${entity}">
@@ -34,6 +34,31 @@
 </#list>
         ${table.fieldNames}
     </sql>
-
 </#if>
+    <!-- 分页查询 -->
+    <select id="pageList" resultType="${packageResult}.${table.entityName}PageResult">
+        select
+        <#list table.fields as field>
+            <#if field_has_next>
+            ${field.name},
+            <#else>
+            ${field.name}
+            </#if>
+        </#list>
+        from
+            ${table.name}
+        <where>
+        <#list table.fields as field>
+            <#if field_index = 0>
+            <if test="null != query.${field.name} and '' != query.${field.name}">
+                ${field.name} = <#noparse>#</#noparse>{query.${field.name}}
+            </if>
+            <#else>
+            <if test="null != query.${field.name} and '' != query.${field.name}">
+                and ${field.name} = <#noparse>#</#noparse>{query.${field.name}}
+            </if>
+            </#if>
+        </#list>
+        </where>
+    </select>
 </mapper>

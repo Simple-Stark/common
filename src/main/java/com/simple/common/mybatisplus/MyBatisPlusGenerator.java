@@ -139,9 +139,12 @@ public class MyBatisPlusGenerator {
         // 自定义文件
         Map<String, String> customFile = new HashMap<>(1);
         customFile.put("PageQuery.java", "/templates/SimplePageQuery.java.ftl");
-        // 自定义属性
+        customFile.put("PageResult.java", "/templates/SimplePageResult.java.ftl");
+        // 自定义属性，用于模板传值
         Map<String, Object> customMap = new HashMap<>();
         customMap.put("packageQuery", packName + ".vo.query");
+        customMap.put("packageResult", packName + ".vo.dto");
+        customMap.put("packageVo", packName + ".vo.vo");
         InjectionConfig injectionConfig = new InjectionConfig.Builder()
                 .customFile(customFile)
                 .customMap(customMap)

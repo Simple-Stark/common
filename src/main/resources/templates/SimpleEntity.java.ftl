@@ -1,7 +1,10 @@
 package ${package.Entity};
 
 <#list table.importPackages as pkg>
+    <#if pkg?contains("Serializable")>
+    <#else >
 import ${pkg};
+    </#if>
 </#list>
 <#if swagger>
 import io.swagger.annotations.ApiModel;
@@ -9,6 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
 </#if>
 <#if entityLombokModel>
 import lombok.Data;
+import lombok.EqualsAndHashCode;
     <#if chainModel>
 import lombok.experimental.Accessors;
     </#if>
@@ -33,6 +37,7 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "${entity}对象", description = "${table.comment!}")
 </#if>
 <#if superEntityClass??>
+@EqualsAndHashCode(callSuper = true)
 public class ${entity} extends ${superEntityClass}<#if activeRecord><${entity}></#if> {
 <#elseif activeRecord>
 public class ${entity} extends Model<${entity}> {

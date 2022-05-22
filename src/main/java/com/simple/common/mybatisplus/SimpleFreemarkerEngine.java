@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.engine.AbstractTemplateEngine;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.simple.common.exception.SimpleException;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.jetbrains.annotations.NotNull;
@@ -57,16 +58,21 @@ public class SimpleFreemarkerEngine extends AbstractTemplateEngine {
         String entityName = tableInfo.getEntityName();
         String otherPath = getPathInfo(OutputFile.other);
         customFile.forEach((key, value) -> {
+            // 根据自定义模板文件类型确定包路径
             String filePath;
             if (key.contains("Query")) {
+                // 查询
                 filePath = "query";
-            } else if (key.contains("PageResult")) {
+            } else if (key.contains("Result")) {
+                // 返回结果
                 filePath = "dto";
             } else {
+                // VO
                 filePath = "vo";
             }
             String fileName = String.format((otherPath + File.separator + "vo" + File.separator + filePath + File.separator + entityName + "%s"), key);
             outputFile(new File(fileName), objectMap, value);
         });
     }
+
 }

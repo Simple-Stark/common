@@ -1,14 +1,12 @@
-package ${packageQuery};
+package ${packageResult};
 
 <#list table.importPackages as pkg>
-    <#if pkg?contains("com.baomidou.mybatisplus") || pkg?contains("BaseEntity") || pkg?contains("Serializable")>
+    <#if pkg?contains("com.baomidou.mybatisplus") || pkg?contains("BaseEntity") >
     <#else >
 import ${pkg};
     </#if>
 </#list>
-import com.simple.common.mybatisplus.BasePage;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
 *
@@ -17,8 +15,7 @@ import lombok.EqualsAndHashCode;
 * @author ${author} ${date}
 */
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class ${table.entityName}PageQuery extends BasePage {
+public class ${table.entityName}PageResult implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

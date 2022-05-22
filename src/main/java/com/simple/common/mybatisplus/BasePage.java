@@ -1,10 +1,14 @@
 package com.simple.common.mybatisplus;
 
+import java.io.Serializable;
+
 /**
  * 分页查询基本条件，分页查询Vo的父类
  * @author Simple 2021/12/2
  */
-public class BasePage {
+public class BasePage implements Serializable {
+
+    private static final long serialVersionUID = 150216828564444662L;
 
     /**
      * 排序规则：降序
@@ -23,7 +27,7 @@ public class BasePage {
      */
     private long current = 1;
     /**
-     * 排序字段 示例：orderBy=age:asc&orderBy=name:desc
+     * 排序字段,可传多个 示例：orderBy=age:asc
      */
     private String[] orderBy;
 

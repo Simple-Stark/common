@@ -6,6 +6,7 @@ import ${package.Mapper}.${table.mapperName};
 import ${package.Service}.${table.serviceName};
 import ${superServiceImplClassPackage};
 import ${packageQuery}.${table.entityName}PageQuery;
+import ${packageResult}.${table.entityName}PageResult;
 import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,7 +31,7 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     }
 
     @Override
-    public SimplePage<${table.entityName}> pageList(${table.entityName}PageQuery pageQuery) {
-        return page(new SimplePage<>(pageQuery));
+    public SimplePage<${table.entityName}PageResult> pageList(${table.entityName}PageQuery pageQuery) {
+        return baseMapper.pageList(new SimplePage<>(pageQuery), pageQuery);
     }
 }
