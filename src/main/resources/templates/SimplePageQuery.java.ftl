@@ -20,8 +20,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class ${table.entityName}PageQuery extends BasePage {
 
-    private static final long serialVersionUID = 1L;
-
 <#-- ----------  BEGIN 字段循环遍历  ---------->
 <#list table.fields as field>
     <#if field.keyFlag>
