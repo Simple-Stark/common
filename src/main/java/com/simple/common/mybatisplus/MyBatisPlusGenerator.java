@@ -140,6 +140,7 @@ public class MyBatisPlusGenerator {
         Map<String, String> customFile = new HashMap<>(1);
         customFile.put("PageQuery.java", "/templates/SimplePageQuery.java.ftl");
         customFile.put("PageResult.java", "/templates/SimplePageResult.java.ftl");
+        customFile.put("Vo.java", "/templates/SimpleVo.java.ftl");
         // 自定义属性，用于模板传值
         Map<String, Object> customMap = new HashMap<>();
         customMap.put("packageQuery", packName + ".vo.query");
