@@ -8,7 +8,7 @@ import java.io.Serializable;
  */
 public class BasePage implements Serializable {
 
-    private static final long serialVersionUID = 150216828564444662L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * 排序规则：降序

@@ -11,7 +11,8 @@ import java.util.Date;
  * @author Simple 2022/1/20
  */
 public class BaseEntity implements Serializable {
-    private static final long serialVersionUID = -4092846516417435993L;
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * 创建人

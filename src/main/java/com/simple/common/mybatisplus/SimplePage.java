@@ -19,7 +19,7 @@ import static com.simple.common.mybatisplus.BasePage.*;
  */
 public class SimplePage<T> implements IPage<T> {
 
-    private static final long serialVersionUID = 2378391261324782979L;
+    private static final long serialVersionUID = 1L;
     /**
      * 查询数据列表
      */
