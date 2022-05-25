@@ -6,6 +6,7 @@ import ${package.Entity}.${entity};
 import ${package.Service}.${table.serviceName};
 import ${packageResult}.${table.entityName}PageResult;
 import ${packageQuery}.${table.entityName}PageQuery;
+import ${packageVo}.${table.entityName}Vo;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.constraints.NotBlank;
@@ -70,9 +71,9 @@ public class ${table.controllerName} {
     * @author ${author} ${date}
     */
     @GetMapping("/getById")
-    public Result<${table.entityName}> getById(@NotBlank(message = "主键id不允许为空") @RequestParam String id) {
-        ${table.entityName} ${table.name} = ${table.name}Service.getById(id);
-        return Result.success(${table.name});
+    public Result<${table.entityName}Vo> getById(@NotBlank(message = "主键id不允许为空") @RequestParam String id) {
+        ${table.entityName}Vo vo = ${table.name}Service.get${table.entityName}ById(id);
+        return Result.success(vo);
     }
 
     /**

@@ -5,6 +5,7 @@ import ${package.Entity}.${entity};
 import ${superServiceClassPackage};
 import ${packageQuery}.${table.entityName}PageQuery;
 import ${packageResult}.${table.entityName}PageResult;
+import ${packageVo}.${table.entityName}Vo;
 
 /**
  * ${table.comment!} 服务接口
@@ -20,6 +21,14 @@ public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
      * @author ${author} ${date}
      */
     String insert(${table.entityName} ${table.name});
+
+    /**
+    * 【查询】根据主键查询${table.entityName}信息
+    * @param id 主键Id
+    * @return ${table.entityName}Vo 对象
+    * @author ${author} ${date}
+    */
+    UserVo getUserById(String id);
 
     /**
      * 【查询】${table.entityName}分页查询列表

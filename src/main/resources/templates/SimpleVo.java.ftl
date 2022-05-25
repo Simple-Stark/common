@@ -11,7 +11,6 @@ import lombok.Data;
 /**
 *
 * ${table.comment!} Vo
-*
 * @author ${author} ${date}
 */
 @Data

@@ -7,8 +7,11 @@ import ${package.Service}.${table.serviceName};
 import ${superServiceImplClassPackage};
 import ${packageQuery}.${table.entityName}PageQuery;
 import ${packageResult}.${table.entityName}PageResult;
+import ${packageVo}.${table.entityName}Vo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.Assert;
 
 /**
  * ${table.comment!} 服务实现类
@@ -28,6 +31,15 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
                 <#break>
             </#if>
         </#list>
+    }
+
+    @Override
+    public ${table.entityName}Vo get${table.entityName}ById(String id) {
+        ${table.entityName} ${table.name} = getById(id);
+        Assert.notNull(user,"该对象不存在，请核对后再试！");
+        ${table.entityName}Vo vo = new ${table.entityName}Vo();
+        BeanUtils.copyProperties(${table.name},vo);
+        return vo;
     }
 
     @Override
