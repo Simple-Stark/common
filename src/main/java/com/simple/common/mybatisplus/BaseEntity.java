@@ -50,7 +50,7 @@ public class BaseEntity implements Serializable {
      * 乐观锁
      */
     @Version
-    private String version;
+    private Long version;
 
     /**
      *  数据库列名常量
@@ -112,11 +112,11 @@ public class BaseEntity implements Serializable {
         this.delFlag = delFlag;
     }
 
-    public String getVersion() {
+    public Long getVersion() {
         return version;
     }
 
-    public void setVersion(String version) {
+    public void setVersion(Long version) {
         this.version = version;
     }
 }
