@@ -115,6 +115,13 @@ public class MyBatisPlusGenerator {
                 .enableRestStyle()
                 // 实体策略配置
                 .entityBuilder()
+                // 添加父类公共字段
+                .addSuperEntityColumns(BaseEntity.COL_CREATE_USER
+                        ,BaseEntity.COL_CREATE_TIME
+                        ,BaseEntity.COL_UPDATE_USER
+                        ,BaseEntity.COL_UPDATE_TIME
+                        ,BaseEntity.COL_DEL_FLAG
+                        ,BaseEntity.COL_VERSION)
                 // 实体继承父类配置
                 .superClass(BaseEntity.class)
                 // 生成字段常量
