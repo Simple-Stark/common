@@ -26,7 +26,7 @@
 - [x] 全局日志配置
 - [x] mybatisPlus 代码自动生成器
   - [x] 调整模板自动生成增删改查接口
-  - [ ] 生成对应Vo
+  - [x] 生成对应Vo（PageResult、PageQuery、Vo）
 - [x] MybatisPlus 分页插件
 - [x] ~~字典工具类~~
   - [x] ~~字典数据放入缓存~~
