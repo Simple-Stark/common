@@ -2,6 +2,8 @@ package com.simple.common.mybatisplus;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.Version;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -41,13 +43,13 @@ public class BaseEntity implements Serializable {
     /**
      * 删除标识：0：正常；1：已删除
      */
-    @TableField(value = "del_flag")
+    @TableLogic
     private String delFlag;
 
     /**
      * 乐观锁
      */
-    @TableField(value = "version")
+    @Version
     private String version;
 
     /**
