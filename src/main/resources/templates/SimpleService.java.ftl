@@ -15,15 +15,15 @@ import ${packageVo}.${table.entityName}Vo;
 public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
 
     /**
-     * 【新增】 一条 ${table.entityName} 数据
-     * @param ${table.name} ${table.comment} 信息
-     * @return 主键Id
-     * @author ${author} ${date}
-     */
-    String insert(${table.entityName} ${table.name});
+    * 【保存】新增或修改${table.comment}信息
+    * @param vo ${table.comment}信息
+    * @return 保存成功后${table.comment}的主键
+    * @author ${author} ${date}
+    */
+    String save${table.entityName}(${table.entityName}Vo vo);
 
     /**
-    * 【查询】根据主键查询${table.entityName}信息
+    * 【查询】根据主键查询${table.comment}信息
     * @param id 主键Id
     * @return ${table.entityName}Vo 对象
     * @author ${author} ${date}
@@ -31,9 +31,9 @@ public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
     UserVo getUserById(String id);
 
     /**
-     * 【查询】${table.entityName}分页查询列表
+     * 【查询】${table.comment}分页查询列表
      * @param pageQuery 查询条件
-     * @return 分页数据
+     * @return ${table.comment}分页数据
      * @author ${author} ${date}
      */
     SimplePage<${table.entityName}PageResult> pageList(${table.entityName}PageQuery pageQuery);

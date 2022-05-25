@@ -54,14 +54,14 @@ public class ${table.controllerName} {
     }
 
     /**
-    * 【新增】添加${table.comment}信息
-    * @param ${table.name} 用户实体
-    * @return 新增${table.comment}的主键
+    * 【保存】新增或修改${table.comment}信息
+    * @param vo ${table.comment}信息
+    * @return 保存成功后${table.comment}的主键
     * @author ${author} ${date}
     */
-    @PostMapping("/insert")
-    public Result<String> insert(@Validated @RequestBody ${table.entityName} ${table.name}) {
-        return Result.success(${table.name}Service.insert(${table.name}));
+    @PostMapping("/save")
+    public Result<String> save(@Validated @RequestBody ${table.entityName}Vo vo) {
+        return Result.success(${table.name}Service.save${table.entityName}(vo));
     }
 
     /**

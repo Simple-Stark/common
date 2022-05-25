@@ -23,8 +23,10 @@ import org.springframework.util.Assert;
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
 
     @Override
-    public String insert(${table.entityName} ${table.name}) {
-        save(${table.name});
+    public String save${table.entityName}(${table.entityName}Vo vo) {
+        ${table.entityName} ${table.name} = new ${table.entityName}();
+        BeanUtils.copyProperties(vo,${table.name});
+        saveOrUpdate(${table.name});
         <#list table.fields as field>
             <#if field.keyFlag>
         return ${table.name}.get${field.name ? cap_first}();
