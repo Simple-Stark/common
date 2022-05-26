@@ -2,6 +2,7 @@ package com.simple.common.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,6 +38,8 @@ public class MybatisPlusConfig {
         DbType dbType = getDbType();
         // 分页插件
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(dbType));
+        // 乐观锁插件
+        interceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor());
         log.info("Mybatis-Plus 插件拦截器加载完成{}，分页插件数据库类型为：{}",interceptor.getInterceptors(),dbType.getDesc());
         return interceptor;
     }
