@@ -44,12 +44,14 @@ public class BaseEntity implements Serializable {
      * 删除标识：0：正常；1：已删除
      */
     @TableLogic
+    @TableField(value = "del_flag", fill = FieldFill.INSERT)
     private String delFlag;
 
     /**
      * 乐观锁
      */
     @Version
+    @TableField(value = "version", fill = FieldFill.INSERT)
     private Long version;
 
     /**
