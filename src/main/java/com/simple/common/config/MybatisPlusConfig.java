@@ -40,7 +40,7 @@ public class MybatisPlusConfig {
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(dbType));
         // 乐观锁插件
         interceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor());
-        log.info("Mybatis-Plus 插件拦截器加载完成{}，分页插件数据库类型为：{}",interceptor.getInterceptors(),dbType.getDesc());
+        log.info("Mybatis-Plus 插件拦截器加载完成：{}",interceptor.getInterceptors());
         return interceptor;
     }
 
