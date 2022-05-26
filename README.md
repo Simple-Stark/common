@@ -24,9 +24,11 @@
 - [x] 全局异常拦截
   - [x] 自定义异常类
 - [x] 全局日志配置
-- [x] mybatisPlus 代码自动生成器
-  - [x] 调整模板自动生成增删改查接口
-  - [x] 生成对应Vo（PageResult、PageQuery、Vo）
+- [x] mybatisPlus 相关 
+  - [x] 代码自动生成器
+    - [x] 调整模板自动生成增删改查接口
+    - [x] 生成对应Vo（PageResult、PageQuery、Vo）
+  - [x] 自动填充创建用户（未完成）、创建时间、修改用户（未完成）、修改时间、删除标识、乐观锁
 - [x] MybatisPlus 分页插件
 - [x] ~~字典工具类~~
   - [x] ~~字典数据放入缓存~~
@@ -55,7 +57,7 @@
 ~~计划之后推送到中央仓库，在此之前只能下载源码自己mvn install安装到本地~~
 ```https://github.com/Simple-Stark/common.git```
 
-## [更新日志](https://github.com/Simple-Stark/common/blob/master/UpdateLog.md)
+## [挖坑日志](https://github.com/Simple-Stark/common/blob/master/UpdateLog.md)
     
 ## License
 
