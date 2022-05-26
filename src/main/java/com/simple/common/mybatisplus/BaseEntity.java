@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.Version;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 基础实体类
@@ -26,7 +26,7 @@ public class BaseEntity implements Serializable {
      * 创建时间
      */
     @TableField(value = "create_time", fill = FieldFill.INSERT)
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
      * 更新人
@@ -38,7 +38,7 @@ public class BaseEntity implements Serializable {
      * 更新时间
      */
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     /**
      * 删除标识：0：正常；1：已删除
@@ -80,11 +80,11 @@ public class BaseEntity implements Serializable {
         this.createUser = createUser;
     }
 
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 
@@ -96,11 +96,11 @@ public class BaseEntity implements Serializable {
         this.updateUser = updateUser;
     }
 
-    public Date getUpdateTime() {
+    public LocalDateTime getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
     }
 
