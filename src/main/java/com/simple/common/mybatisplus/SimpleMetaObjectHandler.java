@@ -1,7 +1,6 @@
-package com.simple.common.config;
+package com.simple.common.mybatisplus;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import com.simple.common.mybatisplus.BaseEntity;
 import org.apache.ibatis.reflection.MetaObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
