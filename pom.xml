@@ -11,10 +11,10 @@
 
     <!-- 项目信息 -->
     <groupId>com.simplestark</groupId>
-    <artifactId>common</artifactId>
-    <version>1.0.0</version>
+    <artifactId>common-core</artifactId>
+    <version>0.1.0</version>
     <name>SimpleCommon</name>
-    <url>https://github.com/Simple-Stark/common</url>
+    <url>https://github.com/Simple-Stark/common-core</url>
     <description>微服务自定义Common包</description>
 
     <properties>
@@ -33,8 +33,8 @@
     <!-- 托管仓库信息 -->
     <scm>
         <url>https://github.com/Simple-Stark/common</url>
-        <connection>https://github.com/Simple-Stark/common.git</connection>
-        <developerConnection>https://github.com/Simple-Stark/common</developerConnection>
+        <connection>https://github.com/Simple-Stark/common-core.git</connection>
+        <developerConnection>https://github.com/Simple-Stark/common-core</developerConnection>
     </scm>
 
     <!--开发者信息-->
@@ -162,7 +162,7 @@
                 </executions>
             </plugin>
         </plugins>
-        <finalName>common</finalName>
+        <finalName>common-core</finalName>
     </build>
 
     <!-- 仓库地址配置信息 -->
