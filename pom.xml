@@ -12,7 +12,7 @@
     <!-- 项目信息 -->
     <groupId>com.simplestark</groupId>
     <artifactId>common-core</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <name>SimpleCommon</name>
     <url>https://github.com/Simple-Stark/common-core</url>
     <description>微服务自定义Common包</description>
