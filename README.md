@@ -43,6 +43,8 @@
 
 最佳实践：[![](https://img.shields.io/badge/@SimpleStark-SpringBootInit-blue.svg)](https://github.com/Simple-Stark/Spring-Boot-Init)
 
+~~计划之后推送到中央仓库，在此之前只能下载源码自己mvn install安装到本地~~
+
 ~~2021-10-05 推送common包至中央仓库，在maven 项目中可以直接引入依赖~~
 
 ~~2022-06-26 名称修改为common-core，版本号修改为 0.1.0 推送至中央仓库，在maven 项目中可以直接引入依赖~~
@@ -56,9 +58,6 @@
 ```
 
 其他方式请参考：https://search.maven.org/artifact/com.simplestark/common-core
-
-~~计划之后推送到中央仓库，在此之前只能下载源码自己mvn install安装到本地~~
-```https://github.com/Simple-Stark/common-core.git```
 
 ## License
 
