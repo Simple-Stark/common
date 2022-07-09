@@ -9,11 +9,9 @@ import ${pkg};
 import lombok.Data;
 
 /**
-*
-* ${table.comment!} 分页查询条件
-*
-* @author ${author} ${date}
-*/
+ * ${table.comment!} 分页返回结果
+ * @author ${author} ${date}
+ */
 @Data
 public class ${table.entityName}PageResult implements Serializable {
 
@@ -26,8 +24,8 @@ public class ${table.entityName}PageResult implements Serializable {
     </#if>
     <#if field.comment!?length gt 0>
     /**
-    * ${field.comment}
-    */
+     * ${field.comment}
+     */
     </#if>
     private ${field.propertyType} ${field.propertyName};
 </#list>

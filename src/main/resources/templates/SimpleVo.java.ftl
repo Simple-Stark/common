@@ -11,10 +11,9 @@ import lombok.Data;
 import javax.validation.constraints.*;
 
 /**
-*
-* ${table.comment!} Vo
-* @author ${author} ${date}
-*/
+ * ${table.comment!} Vo
+ * @author ${author} ${date}
+ */
 @Data
 public class ${table.entityName}Vo implements Serializable {
 
@@ -27,8 +26,8 @@ public class ${table.entityName}Vo implements Serializable {
     </#if>
     <#if field.comment!?length gt 0>
     /**
-    * ${field.comment}
-    */
+     * ${field.comment}
+     */
     </#if>
     <#if field.keyFlag>
     <#elseif field.propertyType?contains("String")>

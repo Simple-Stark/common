@@ -11,11 +11,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
-*
-* ${table.comment!} 分页查询条件
-*
-* @author ${author} ${date}
-*/
+ * ${table.comment!} 分页查询条件
+ * @author ${author} ${date}
+ */
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class ${table.entityName}PageQuery extends BasePage {
@@ -27,8 +25,8 @@ public class ${table.entityName}PageQuery extends BasePage {
     </#if>
     <#if field.comment!?length gt 0>
     /**
-    * ${field.comment}
-    */
+     * ${field.comment}
+     */
     </#if>
     private ${field.propertyType} ${field.propertyName};
 </#list>

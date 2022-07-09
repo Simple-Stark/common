@@ -15,7 +15,6 @@ import org.springframework.util.Assert;
 
 /**
  * ${table.comment!} 服务实现类
- *
  * @author ${author} ${date}
  */
 @Slf4j

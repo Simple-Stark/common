@@ -19,11 +19,9 @@ import lombok.experimental.Accessors;
 </#if>
 
 /**
-*
-* ${table.comment!} 实体类
-*
-* @author ${author} ${date}
-*/
+ * ${table.comment!} 实体类
+ * @author ${author} ${date}
+ */
 <#if entityLombokModel>
 @Data
     <#if chainModel>
