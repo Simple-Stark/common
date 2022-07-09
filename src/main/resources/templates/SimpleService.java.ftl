@@ -28,7 +28,7 @@ public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
     * @return ${table.entityName}Vo 对象
     * @author ${author} ${date}
     */
-    UserVo getUserById(String id);
+    ${table.entityName}Vo get${table.entityName}ById(String id);
 
     /**
      * 【查询】${table.comment}分页查询列表

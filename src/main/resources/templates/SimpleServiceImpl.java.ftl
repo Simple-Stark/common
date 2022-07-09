@@ -29,7 +29,7 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         saveOrUpdate(${table.name});
         <#list table.fields as field>
             <#if field.keyFlag>
-        return ${table.name}.get${field.name ? cap_first}();
+        return ${table.name}.get${field.capitalName}();
                 <#break>
             </#if>
         </#list>
@@ -38,7 +38,7 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     @Override
     public ${table.entityName}Vo get${table.entityName}ById(String id) {
         ${table.entityName} ${table.name} = getById(id);
-        Assert.notNull(user,"该对象不存在，请核对后再试！");
+        Assert.notNull(${table.name},"该对象不存在，请核对后再试！");
         ${table.entityName}Vo vo = new ${table.entityName}Vo();
         BeanUtils.copyProperties(${table.name},vo);
         return vo;
