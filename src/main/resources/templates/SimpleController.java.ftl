@@ -35,10 +35,11 @@ public class ${table.controllerName} extends ${superControllerClass} {
 public class ${table.controllerName} {
 </#if>
 
-    private final ${table.serviceName} ${table.name}Service;
+    <#assign serverName= "${table.serviceImplName ? replace('Impl','') ? uncap_first }"/>
+    private final ${table.serviceName} ${serverName};
 
-    public ${table.controllerName}(${table.serviceName} ${table.name}Service) {
-        this.${table.name}Service = ${table.name}Service;
+    public ${table.controllerName}(${table.serviceName} ${serverName}) {
+        this.${serverName} = ${serverName};
     }
 
     /**
@@ -49,7 +50,7 @@ public class ${table.controllerName} {
     */
     @GetMapping("/list")
     public Result<SimplePage<${table.entityName}PageResult>> list(${table.entityName}PageQuery pageQuery) {
-        SimplePage<${table.entityName}PageResult> pageList = ${table.name}Service.pageList(pageQuery);
+        SimplePage<${table.entityName}PageResult> pageList = ${serverName}.pageList(pageQuery);
         return Result.success(pageList);
     }
 
@@ -61,7 +62,7 @@ public class ${table.controllerName} {
     */
     @PostMapping("/save")
     public Result<String> save(@Validated @RequestBody ${table.entityName}Vo vo) {
-        return Result.success(${table.name}Service.save${table.entityName}(vo));
+        return Result.success(${serverName}.save${table.entityName}(vo));
     }
 
     /**
@@ -72,7 +73,7 @@ public class ${table.controllerName} {
     */
     @GetMapping("/getById")
     public Result<${table.entityName}Vo> getById(@NotBlank(message = "主键id不允许为空") @RequestParam String id) {
-        ${table.entityName}Vo vo = ${table.name}Service.get${table.entityName}ById(id);
+        ${table.entityName}Vo vo = ${serverName}.get${table.entityName}ById(id);
         return Result.success(vo);
     }
 
@@ -84,7 +85,7 @@ public class ${table.controllerName} {
     */
     @DeleteMapping("/deleteById")
     public Result<Boolean> deleteById(@NotBlank(message = "主键id不允许为空") @RequestParam String id) {
-        return Result.success(${table.name}Service.removeById(id));
+        return Result.success(${serverName}.removeById(id));
     }
 }
 </#if>
